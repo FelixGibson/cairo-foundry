@@ -284,7 +284,7 @@ impl CommandExecution<TestOutput, TestCommandError> for TestArgs {
 		let hooks = setup_hooks();
 
 		list_cairo_files(&self.root)?
-			.into_par_iter()
+			.into_iter()
 			.map(compile_and_list_entrypoints)
 			.map(|res| -> Result<TestResult, TestCommandError> {
 				match res {

@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'cairo-foundry'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=cairo-foundry"
+                ],
+                "filter": {
+                    "name": "cairo-foundry",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "test  'cairo-foundry'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=cairo-foundry",
+                    "--package=cairo-foundry"
+                ],
+                "filter": {
+                    "name": "cairo-foundry",
+                    "kind": "bin"
+                }
+            },
+            "args": ["test", "--root", "/home/felix/software/blockchain/starknet/cairo-foundry/test_cairo_hints"],
+            "cwd": "${workspaceFolder}",
+            "sourceLanguages": ["rust"]
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "list  'cairo-foundry'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=cairo-foundry",
+                    "--package=cairo-foundry"
+                ],
+                "filter": {
+                    "name": "cairo-foundry",
+                    "kind": "bin"
+                }
+            },
+            "args": ["list", "--root", "/home/felix/software/blockchain/starknet/cairo-foundry"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'cairo-foundry'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=cairo-foundry",
+                    "--package=cairo-foundry"
+                ],
+                "filter": {
+                    "name": "cairo-foundry",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "sourceLanguages": ["rust"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
